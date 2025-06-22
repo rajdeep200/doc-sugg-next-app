@@ -4,7 +4,7 @@ import { jwtVerify } from 'jose'
 const secret = new TextEncoder().encode(process.env.JWT_SECRET || 'your-secret-key')
 
 export async function middleware(request) {
-    const protectedPaths = ['/home']
+    const protectedPaths = ['/home', '/']
     const { pathname } = request.nextUrl
 
     if (!protectedPaths.includes(pathname)) {
