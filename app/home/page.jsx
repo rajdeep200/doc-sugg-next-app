@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import PdfViewerWrapper from './PdfViewerWrapper'
 import { useRouter } from 'next/navigation'
