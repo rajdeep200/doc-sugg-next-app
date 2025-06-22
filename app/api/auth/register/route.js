@@ -9,6 +9,10 @@ export async function POST(req) {
         const { name, email, password, accessCode } = await req.json()
         await connectDB()
 
+        if (!password || password.length < 6) {
+            return NextResponse.json({ message: 'Password must be at least 6 characters long' }, { status: 400 })
+        }
+
         // admin creds
         // id: 685702791106a5379e9556b4
         // "email": "admin@gmail.com",
@@ -20,7 +24,6 @@ export async function POST(req) {
         }
 
         const codeDoc = await AccessCode.findOne({ code: accessCode, usedBy: null })
-        console.log("codeDoc :: ", codeDoc)
         if (!codeDoc) {
             return NextResponse.json({ message: 'Invalid or already used access code' }, { status: 400 })
         }
