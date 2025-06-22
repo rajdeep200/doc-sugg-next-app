@@ -13,6 +13,17 @@ pnpm dev
 # or
 bun dev
 ```
+To run this application locally, create a .env file in the root directory with the following keys:
+```bash
+# MongoDB connection string
+MONGODB_URI=
+
+# JWT secret for signing tokens
+JWT_SECRET=supersecret
+
+# URL for the Socket.IO server (must start with http:// or https://)
+NEXT_PUBLIC_SOCKET_SERVER_URL=http://localhost:4040
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
