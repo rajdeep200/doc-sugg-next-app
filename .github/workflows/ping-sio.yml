@@ -1,0 +1,13 @@
+name: Ping Render SIO
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl ping endpoint
+        run: curl -s https://doc-sugg-sio.onrender.com/ping
