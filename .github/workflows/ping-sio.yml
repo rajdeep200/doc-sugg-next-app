@@ -1,4 +1,4 @@
-name: Ping Render SIO
+name: Keep Render SIO Server Awake
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ping:
+  ping-server:
     runs-on: ubuntu-latest
     steps:
       - name: Curl ping endpoint
